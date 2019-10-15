@@ -1,5 +1,12 @@
 .container {
-  text-align: center;
+  text-align: center
 
+}
+
+.status {
+  text-align: center;
+  height: 70px;
+  width: 70px;
+  background: grey;
 }
 

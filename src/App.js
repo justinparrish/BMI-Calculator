@@ -1,6 +1,12 @@
 import React from 'react';
 import './App.css';
 
+const getCalculation = (number) => (
+  <span>
+    {number.bmi} <div className='status'></div>
+  </span>
+  )
+
 
 class BmiForm extends React.Component {
   state = {
@@ -25,10 +31,10 @@ class BmiForm extends React.Component {
   render = () => (
     <form onSubmit={this.handleSubmit}>
       <label>Height</label>
-      <input type='range' min='40' max='96' name='height' onChange={this.handleInput} />
+      <input type='range' min='40' max='96' name='height' onChange={this.handleInput} /><br />
       <label>Weight</label>
-      <input type='range' min='70' max='400' name='weight' onChange={this.handleInput} />
-      <input type='submit' value='Calculate' />
+      <input type='range' min='70' max='400' name='weight' onChange={this.handleInput} /><br />
+      <input type='submit' value='Calculate' /><br />
     </form>
   )
 }
@@ -55,9 +61,9 @@ class App extends React.Component {
   }
 
   render = () => (
-    <div>
+    <div className='container'>
       <h1>BMI Calculator</h1>
-      {this.state.bmi}
+      {getCalculation(this.state)}
       <BmiForm calculateBmi={this.calculateBmi}/>
     </div>
   );
