@@ -3,7 +3,7 @@ import './App.css';
 
 const getCalculation = (number) => (
   <span>
-    {number.bmi} <div className='status'></div>
+    {number.bmi} <div className='status'>Status</div>
   </span>
   )
 
@@ -47,6 +47,26 @@ class App extends React.Component {
     weight: undefined,
   }
 
+  statusColor = () => {
+    let status = document.querySelector('.status')
+    if (this.state.bmi < 18.50) {
+      status.style.background = 'yellow'
+      status.innerHTML = 'Underweight'
+    }
+    else if (this.state.bmi >= 18.50 && this.state.bmi <= 24.90) {
+      status.style.background = 'green'
+      status.innerHTML = 'Normal Weight'
+    }
+    else if (this.state.bmi >= 25.00 && this.state.bmi <= 29.90) {
+      status.style.background = 'orangered'
+      status.innerHTML = 'Overweight'
+    }
+    else if (this.state.bmi >= 30.00) {
+      status.style.background = 'red'
+      status.innerHTML = 'Obesity'
+    }
+  }
+
   calculateBmi = (info) => {
     let state = {...this.state}
 
@@ -63,7 +83,7 @@ class App extends React.Component {
   render = () => (
     <div className='container'>
       <h1>BMI Calculator</h1>
-      {getCalculation(this.state)}
+      {getCalculation(this.state, this.statusColor())}
       <BmiForm calculateBmi={this.calculateBmi}/>
     </div>
   );
