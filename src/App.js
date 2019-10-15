@@ -3,7 +3,6 @@ import './App.css';
 
 const getCalculatedBmi = (number) => (<span>{number.bmi}</span>)
 
-
 const BmiForm = () => (
   <form>
     <label>Height</label>
@@ -13,9 +12,17 @@ const BmiForm = () => (
     <input type='submit' value='Calculate' />
   </form>
 )
+const test = {bmi: undefined, height: undefined, weight: undefined }
 
-const App = () => {
-  return (
+
+class App extends React.Component {
+  state = {
+    bmi: undefined,
+    height: undefined,
+    weight: undefined
+  }
+  
+  render = () => (
     <div>
       <h1>BMI Calculator</h1>
       {BmiForm()}
