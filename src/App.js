@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, Form, Slider } from 'antd'
 import './App.css';
 
 const getCalculation = (number) => (
@@ -29,13 +30,15 @@ class BmiForm extends React.Component {
   }
 
   render = () => (
-    <form onSubmit={this.handleSubmit}>
-      <label>Height</label>
-      <input type='range' min='40' max='96' name='height' onChange={this.handleInput} /><br />
-      <label>Weight</label>
-      <input type='range' min='70' max='400' name='weight' onChange={this.handleInput} /><br />
-      <input type='submit' value='Calculate' /><br />
-    </form>
+    <Form onSubmit={this.handleSubmit}>
+      <Form.Item label='Height'>
+      <input type='range' min='48' max='84' name='height' onChange={this.handleInput} />
+      </Form.Item>
+      <Form.Item label='Weight'>
+      <input type='range' min='70' max='400' name='weight' onChange={this.handleInput} />
+      </Form.Item>
+      <input type='submit' value='Calculate' />
+    </Form>
   )
 }
 
