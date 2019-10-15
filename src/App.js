@@ -3,23 +3,27 @@ import { Button, Form, Slider } from 'antd'
 import './App.css';
 
 const getCalculation = (number) => (
-  <span>
-    {number.bmi} <div className='status'>Status</div>
-  </span>
+  <div>
+    <div className='status'>Status</div>
+    <br />
+    <div className='bmi' style={{padding: '10px', fontSize: '40px'}}>
+    {number.bmi} 
+    </div>
+  </div>
   )
 
 
 class BmiForm extends React.Component {
   state = {
-    height: undefined,
-    weight: undefined
+    height: 0,
+    weight: 0
   }
 
   handleInput = (evnt) => {
     let state = {...this.state}
 
     state[evnt.target.name] = evnt.target.value
-
+    console.log(state)
     this.setState(state)
   }
 
@@ -28,14 +32,14 @@ class BmiForm extends React.Component {
 
     this.props.calculateBmi(this.state)
   }
-
+//<Slider min={48} max={84} marks={{0: '4ft', 1: '5ft', 2: '6ft', 3: '7ft'}}  />
   render = () => (
     <Form onSubmit={this.handleSubmit}>
-      <Form.Item label='Height'>
-      <input type='range' min='48' max='84' name='height' onChange={this.handleInput} />
+      <Form.Item label='Height(inches)'>
+      <input type='range' min='48' max='84' name='height' onChange={this.handleInput} /><span>{this.state.height}</span>
       </Form.Item>
-      <Form.Item label='Weight'>
-      <input type='range' min='70' max='400' name='weight' onChange={this.handleInput} />
+      <Form.Item label='Weight(pounds)'>
+      <input type='range' min='70' max='400' name='weight' onChange={this.handleInput} /><span>{this.state.weight}</span>
       </Form.Item>
       <input type='submit' value='Calculate' />
     </Form>

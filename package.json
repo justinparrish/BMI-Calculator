@@ -4,10 +4,13 @@
   "private": true,
   "dependencies": {
     "antd": "^3.23.6",
+    "lodash.template": "^4.5.0",
+    "mixin-deep": "^2.0.1",
     "rangeslider.js": "^2.3.3",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "set-value": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
