@@ -14,3 +14,5 @@ This application serves a great purpose for anyone in the medical industry. BMI 
 [Deployed App](https://github.com/justinparrish/BMI-Calculator 'Deployed App')
 
 ## Wireframe
+
+![alt text](public/images/wireframe.png 'wireframe')
