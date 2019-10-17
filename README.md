@@ -6,7 +6,7 @@ This application serves a great purpose for anyone in the medical industry. BMI 
 
 [GitHub](https://github.com/justinparrish/BMI-Calculator 'GitHub')
 
-[Deployed App](https://github.com/justinparrish/BMI-Calculator 'Deployed App')
+[Deployed App](https://calm-journey-09555.herokuapp.com 'Deployed App')
 
 
 ## Wireframe
